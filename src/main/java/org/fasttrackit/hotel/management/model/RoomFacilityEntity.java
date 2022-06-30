@@ -1,7 +1,6 @@
 package org.fasttrackit.hotel.management.model;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,7 +9,10 @@ import javax.persistence.Id;
 @Entity
 @Setter
 @Getter
-public class RoomFacilities {
+@With
+@AllArgsConstructor
+@NoArgsConstructor
+public class RoomFacilityEntity {
     @Id
     @GeneratedValue
     private int id;

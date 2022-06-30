@@ -5,13 +5,16 @@ import lombok.*;
 import javax.persistence.*;
 import java.util.List;
 
+import static javax.persistence.CascadeType.ALL;
+
 @Entity
 @Setter
 @Getter
+@With
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class Room {
+public class RoomEntity {
     @Id
     @GeneratedValue
     private int id;
@@ -20,9 +23,9 @@ public class Room {
     private int floor;
     private String hotelName;
 
-    @OneToMany
-    private List<CleanOperations>  cleanups;
+//    @OneToMany(cascade = ALL)
+//    private List<CleanOperationsEntity>  cleanups;
 
-    @OneToOne
-    private RoomFacilities facilities;
+    @OneToOne(cascade = ALL)
+    private RoomFacilityEntity facilities;
 }
